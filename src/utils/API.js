@@ -1,6 +1,6 @@
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
-  return fetch('/api/users/me', {
+  return fetch('https://booksearchappli.herokuapp.com/api/users/me', {
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
@@ -9,7 +9,7 @@ export const getMe = (token) => {
 };
 
 export const createUser = (userData) => {
-  return fetch('/api/users', {
+  return fetch('https://booksearchappli.herokuapp.com/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const createUser = (userData) => {
 };
 
 export const loginUser = (userData) => {
-  return fetch('/api/users/login', {
+  return fetch('https://booksearchappli.herokuapp.com/api/users/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const loginUser = (userData) => {
 
 // save book data for a logged in user
 export const saveBook = (bookData, token) => {
-  return fetch('/api/users', {
+  return fetch('https://booksearchappli.herokuapp.com/api/users', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const saveBook = (bookData, token) => {
 
 // remove saved book data for a logged in user
 export const deleteBook = (bookId, token) => {
-  return fetch(`/api/users/books/${bookId}`, {
+  return fetch(`https://booksearchappli.herokuapp.com/api/users/books/${bookId}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${token}`,
